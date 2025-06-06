@@ -1,36 +1,176 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📘 JEE Main Dashboard
 
-## Getting Started
+A responsive, interactive dashboard for JEE Main aspirants built using **Next.js**, **Tailwind CSS**, **shadcn/ui**, and **Redux Toolkit**. It presents subject-wise chapter data with filters, tabs, status indicators, and much more — all powered by mock JSON data.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+### ✅ Core Features (as per Requirements)
+- **Subject Tabs**: Switch between Physics, Chemistry, and Mathematics.
+- **FilterBar**:
+  - **Multi-select Filters** for Class and Units (dynamically fetched per subject).
+  - **Status Filter**: View only "Not Started" chapters.
+  - **Weak Chapters Toggle**: Highlight weaker areas for focused study.
+- **Chapter List View**:
+  - Detailed stat cards (progress, completed questions, etc.)
+  - **Icons from [PhosphorIcons](https://phosphoricons.com/)**, randomly assigned.
+  - Green/red arrow indicators for performance trends.
+- **Sorting Toggle**: Sort by chapter performance or completion.
+- **Dark Mode**: Supports system-based or manual dark/light theme toggle.
+- **Responsive Design**: Fully optimized for mobile and desktop screens.
+
+### ➕ Additional Features
+- **Meta Tags**: For SEO and better social previews.
+- **Favicon (Tab Icon)**: Added via `public/favicon.ico`.
+- **Pagination**: Data is paginated for better UX on long lists.
+- **Redux Toolkit**: Centralized global state for filters and theme.
+- **Custom Hooks**: `useChapters` for reusable data logic.
+- **Utility Functions**: Helpers for data manipulation (`lib/utils.ts`).
+- **Folder Structure Optimization**: Clean and modular file organization.
+
+---
+
+## 🧱 Tech Stack
+
+| Tool/Library        | Purpose                        |
+|---------------------|--------------------------------|
+| Next.js (App Router) | Routing, SSR, and page layout  |
+| Tailwind CSS        | Utility-first styling           |
+| shadcn/ui           | UI primitives and accessibility |
+| Redux Toolkit       | State management                |
+| Phosphor Icons      | Chapter icons                   |
+
+---
+
+## 📁 Folder Structure
+
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── providers.tsx
+├── components/
+│   ├── dashboard/
+│   │   ├── ChapterCard.tsx
+│   │   ├── ChapterList.tsx
+│   │   ├── FilterBar.tsx
+│   │   └── SubjectTabs.tsx
+│   ├── layout/
+│   │   └── Sidebar.tsx
+│   └── ui/
+│       ├── badge.tsx
+│       ├── button.tsx
+│       ├── select.tsx
+│       ├── tabs.tsx
+│       └── toggle.tsx
+├── data/
+│   └── mockData.ts
+├── hooks/
+│   └── useChapters.ts
+├── lib/
+│   └── utils.ts
+├── store/
+│   ├── slices/
+│   ├── index.ts
+│   └── types/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔧 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/your-username/jee-main-dashboard.git
+   cd jee-main-dashboard
+   ```
 
-## Learn More
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Build for production**
+   ```bash
+   npm run build
+   npm start
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🌐 Meta Tags
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Set in `app/layout.tsx` using `<Head>` from `next/head`:
+```tsx
+<Head>
+  <title>JEE Main Dashboard</title>
+  <meta name="description" content="Track and analyze your JEE chapter-wise progress for Physics, Chemistry, and Math." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+</Head>
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📊 Pagination
+
+Implemented in `ChapterList.tsx` using `useState` + `slice()` to:
+- Show 6 chapters per page
+- Navigate using page numbers or next/prev
+
+---
+
+## 🌑 Dark Mode
+
+Enabled using [`next-themes`](https://github.com/pacocoursey/next-themes) and shadcn toggle switch:
+```tsx
+import { useTheme } from 'next-themes';
+const { theme, setTheme } = useTheme();
+```
+
+---
+
+## 📈 Filtering Logic
+
+- Filters and toggles dispatch actions to Redux store.
+- Selectors compute filtered chapter list.
+- Weak chapters identified based on custom logic (e.g., low completion percentage).
+
+---
+
+## 📦 Dependencies (partial)
+
+```json
+{
+  "next": "14.x",
+  "react": "18.x",
+  "tailwindcss": "^3.x",
+  "redux": "^4.x",
+  "@reduxjs/toolkit": "^1.x",
+  "phosphor-react": "^2.x",
+  "next-themes": "^0.x",
+  "shadcn/ui": "^1.x"
+}
+```
+
+---
+
+## 🙌 Credits
+
+- UI inspired by Figma designs.
+- Icons by [Phosphor Icons](https://phosphoricons.com/).
+- Built with ❤️ by [Your Name].
+
+---
+
+## 📃 License
+
+This project is licensed under the MIT License.
