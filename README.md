@@ -123,7 +123,7 @@ Set in `app/layout.tsx` using `<Head>` from `next/head`:
 ## 📊 Pagination
 
 Implemented in `ChapterList.tsx` using `useState` + `slice()` to:
-- Show 6 chapters per page
+- Show 10 chapters per page
 - Navigate using page numbers or next/prev
 
 ---
@@ -160,17 +160,3 @@ const { theme, setTheme } = useTheme();
   "shadcn/ui": "^1.x"
 }
 ```
-
----
-
-## 🙌 Credits
-
-- UI inspired by Figma designs.
-- Icons by [Phosphor Icons](https://phosphoricons.com/).
-- Built with ❤️ by [Your Name].
-
----
-
-## 📃 License
-
-This project is licensed under the MIT License.
