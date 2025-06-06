@@ -1,7 +1,6 @@
 // src/utils/iconMapping.ts
-import { 
-  AtomIcon, 
-  // FlaskIcon, 
+import {
+  AtomIcon,
   CalculatorIcon,
   ZapIcon,
   MoveIcon,
@@ -9,16 +8,16 @@ import {
   GaugeIcon,
   ArrowUpIcon,
   RotateCwIcon,
-  SparklesIcon
+  SparklesIcon,
+  LucideIcon,
 } from 'lucide-react';
 
-const iconMap: { [key: string]: any } = {
+const iconMap: Record<string, LucideIcon> = {
   'Mathematics in Physics': CalculatorIcon,
   'Units and Dimensions': GaugeIcon,
   'Motion In One Dimension': ArrowUpIcon,
   'Motion In Two Dimensions': MoveIcon,
   'Laws of Motion': TargetIcon,
-  // 'Mechanical Properties of Fluids': FlaskIcon,
   'Electrostatics': ZapIcon,
   'Magnetic Effects of Current': RotateCwIcon,
   'Atomic Physics': AtomIcon,
@@ -30,13 +29,8 @@ const iconMap: { [key: string]: any } = {
   'Three Dimensional Geometry': MoveIcon,
   'Linear Programming': TargetIcon,
   'Probability': SparklesIcon,
-  // 'p Block Elements (Group 15, 16, 17 & 18)': FlaskIcon,
-  // 'd and f Block Elements': AtomIcon,
-  // 'Coordination Compounds': FlaskIcon,
-  // 'Haloalkanes and Haloarenes': FlaskIcon,
-  // 'Alcohols Phenols and Ethers': FlaskIcon,
 };
 
-export function getIconForChapter(chapterName: string) {
+export function getIconForChapter(chapterName: string): LucideIcon {
   return iconMap[chapterName] || AtomIcon;
 }
