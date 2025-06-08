@@ -1,5 +1,3 @@
-
-// Updated FilterBar component with better dark mode support
 'use client';
 
 import { useState } from 'react';
