@@ -1,4 +1,3 @@
-// Updated ChapterList component with fixed theme colors
 'use client';
 
 import { useState } from 'react';
