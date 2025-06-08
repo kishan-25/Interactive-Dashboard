@@ -1,4 +1,3 @@
-// src/types/chapter.ts
 export interface YearWiseQuestionCount {
   [year: string]: number;
 }
