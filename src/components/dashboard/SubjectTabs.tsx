@@ -1,4 +1,3 @@
-// 1. Updated SubjectTabs component with corrected theme toggle
 'use client';
 
 import { useSelector } from 'react-redux';
