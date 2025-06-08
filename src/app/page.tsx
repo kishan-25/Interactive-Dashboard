@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client';
 
 import { Sidebar } from '@/components/layout/Sidebar';
