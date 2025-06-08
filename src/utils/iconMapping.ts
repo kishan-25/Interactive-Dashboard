@@ -1,4 +1,3 @@
-// src/utils/iconMapping.ts
 import {
   AtomIcon,
   CalculatorIcon,
