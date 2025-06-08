@@ -1,5 +1,3 @@
-
-// src/hooks/useChapters.ts
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { RootState } from '@/store';
