@@ -1,4 +1,3 @@
-// src/store/slices/filtersSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { FilterState } from '@/types/chapter';
 
