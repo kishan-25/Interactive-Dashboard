@@ -1,4 +1,3 @@
-// src/utils/filterHelpers.ts
 import { Chapter, FilterState } from '@/types/chapter';
 
 export function getUniqueClasses(chapters: Chapter[], selectedSubject: string): string[] {
