@@ -1,4 +1,3 @@
-// src/data/mockData.ts
 import { Chapter } from '@/types/chapter';
 
 export const mockChapters: Chapter[] = [
