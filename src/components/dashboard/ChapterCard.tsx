@@ -1,4 +1,3 @@
-// 2. Updated ChapterCard component with fixed theme colors
 'use client';
 
 import { Chapter } from '@/types/chapter';
