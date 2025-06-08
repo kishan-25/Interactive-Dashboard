@@ -1,4 +1,3 @@
-// src/store/slices/chaptersSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Chapter } from '@/types/chapter';
 import { mockChapters } from '@/data/mockData';
